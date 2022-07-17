@@ -163,8 +163,8 @@ rules:
           }
         to: [{ key_code: left_arrow, modifiers: [left_control] }]
 
-      # option: mouse move
-      - description: "option + h = mouse left"
+      # option: move to the previous word
+      - description: "option + h = option + left"
         type: basic
         from:
           {
@@ -181,7 +181,7 @@ rules:
                   ],
               },
           }
-        to: [{ mouse_key: { x: -1600 } }]
+        to: [{ key_code: left_arrow, modifiers: [left_option] }]
 
       # shift + option: fast mouse move
       - description: "shift + option + h = mouse left fast"
@@ -553,7 +553,7 @@ rules:
                   ],
               },
           }
-        to: [{ mouse_key: { y: -1600 } }]
+        to: [{ key_code: up_arrow, modifiers: [left_control] }]
 
       # shift + option: mouse move fast
       - description: "shift + option + k = mouse up fast"
@@ -716,8 +716,8 @@ rules:
           }
         to: [{ key_code: right_arrow, modifiers: [left_control] }]
 
-      # option: mouse move
-      - description: "option + l = mouse move right"
+      # option: move to next word
+      - description: "option + l = option + right"
         type: basic
         from:
           {
@@ -734,7 +734,7 @@ rules:
                   ],
               },
           }
-        to: [{ mouse_key: { x: 1600 } }]
+        to: [{ key_code: right_arrow, modifiers: [left_option] }]
 
       # shift + option: mouse move fast
       - description: "shift + option + l = mouse move right fast"
@@ -3897,7 +3897,7 @@ rules:
           }
         to: [{ shell_command: open -a mail }]
 
-      - description: "e = safari"
+      - description: "e = Notion"
         type: basic
         from:
           {
@@ -3908,7 +3908,7 @@ rules:
                   [right_command, right_control, right_shift, right_option],
               },
           }
-        to: [{ shell_command: open -a Safari }]
+        to: [{ shell_command: open -a Notion }]
 
       #==========================================================#
       # ( r ) --> iterm / preview / terminal                     #
@@ -4005,7 +4005,7 @@ rules:
           }
         to: [{ shell_command: open -a notes }]
 
-      - description: "t = vscode"
+      - description: "t = Teams"
         type: basic
         from:
           {
@@ -4016,7 +4016,7 @@ rules:
                   [right_command, right_control, right_shift, right_option],
               },
           }
-        to: [{ shell_command: open -a 'Visual Studio Code' }]
+        to: [{ shell_command: open -a 'Microsoft Teams' }]
 
       #==========================================================#
       # ( y ) --> siri / karabiner / amphetamine                 #
@@ -4073,9 +4073,9 @@ rules:
         to: [{ shell_command: open -a Siri }]
 
       #==========================================================#
-      # ( f ) --> alfred 4 / Dash / Dictionary                   #
+      # ( f ) --> Figma / Front / Dictionary                   #
       #==========================================================#
-      - description: "command + f = Dash"
+      - description: "command + f = Front"
         type: basic
         from:
           {
@@ -4092,7 +4092,7 @@ rules:
                   ],
               },
           }
-        to: [{ shell_command: open -a Dash }]
+        to: [{ shell_command: open -a Front }]
 
       - description: "option + f = Dictionary"
         type: basic
@@ -4113,7 +4113,7 @@ rules:
           }
         to: [{ shell_command: open -a Dictionary }]
 
-      - description: "f = Alfred 4"
+      - description: "f = Figma"
         type: basic
         from:
           {
@@ -4124,7 +4124,7 @@ rules:
                   [right_command, right_control, right_shift, right_option],
               },
           }
-        to: [{ shell_command: open -a 'Alfred 4' }]
+        to: [{ shell_command: open -a 'Figma' }]
 
       #==========================================================#
       # ( g ) --> idea / chrome / calender                       #
@@ -4291,9 +4291,9 @@ rules:
         to: [{ key_code: r, modifiers: [left_control] }]
 
       #==========================================================#
-      # ( c ) -->  Ctrl-C (SIGINT)  |  Shift+F5 (VS Code Stop)   #
+      # ( c ) -->  VsCode and Calendar
       #==========================================================#
-      - description: "command + c = shift + F5 (vscode stop)"
+      - description: "command + c = Calendar"
         type: basic
         from:
           {
@@ -4310,9 +4310,9 @@ rules:
                   ],
               },
           }
-        to: [{ key_code: f5, modifiers: [left_shift] }]
+        to: [{ shell_command: open -a 'Calendar' }]
 
-      - description: "c = ctrl-c"
+      - description: "c = Chrome"
         type: basic
         from:
           {
@@ -4323,13 +4323,13 @@ rules:
                   [right_command, right_control, right_shift, right_option],
               },
           }
-        to: [{ key_code: c, modifiers: [left_control] }]
+        to: [{ shell_command: open -a 'Google Chrome' }]
 
       #==========================================================#
-      # ( v ) -->  Vim Prefix Meta Key                           #
+      # ( v ) -->  VsCode                        #
       #==========================================================#
-      # - description: 'v = vim meta key'
-      - description: "v = ctrl-v"
+      # - description: 'v = VsCode'
+      - description: "v = Visual Studio Code"
         type: basic
         from:
           {
@@ -4340,7 +4340,7 @@ rules:
                   [right_command, right_control, right_shift, right_option],
               },
           }
-        to: [{ key_code: v, modifiers: [left_control] }]
+        to: [{ shell_command: open -a 'Visual Studio Code' }]
 
       #==========================================================#
       # ( b ) -->  Tmux Prefix Meta Key                          #
